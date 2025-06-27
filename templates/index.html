@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spark X Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Orbitron', sans-serif; background: #111; color: #0ff; margin: 0; padding: 20px; }
+    h1 { text-align: center; }
+    .projects { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .card { background: #222; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 0 10px #0ff; }
+    .card img { max-width: 100%; border-radius: 8px; }
+    .card a { color: #0f8; text-decoration: none; margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Spark X Projects</h1>
+  <div class="projects">
+    {% for project in projects %}
+    <div class="card">
+      <img src="{{ project.image }}" alt="{{ project.title }}">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      <a href="{{ project.github }}" target="_blank">GitHub</a>
+      <a href="{{ project.demo }}" target="_blank">Demo</a>
+      <a href="{{ project.zip }}" download>Download ZIP</a>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
