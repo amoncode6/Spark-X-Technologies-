@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Upload Project</title>
+  <style>
+    body { background: #000; color: #0ff; font-family: 'Orbitron', sans-serif; padding: 30px; }
+    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+    input, textarea { padding: 10px; background: #111; color: #0ff; border: 1px solid #0ff; border-radius: 8px; }
+    button { padding: 10px; background: #0ff; color: #000; font-weight: bold; border: none; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Upload New Project</h1>
+  <form action="/admin" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Project Title" required>
+    <textarea name="description" placeholder="Project Description" required></textarea>
+    <input type="text" name="github" placeholder="GitHub Link">
+    <input type="text" name="demo" placeholder="Demo Link">
+    <input type="file" name="image" required>
+    <input type="file" name="zip_file" required>
+    <button type="submit">Upload</button>
+  </form>
+</body>
+</html>
